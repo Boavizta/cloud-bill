@@ -51,7 +51,7 @@ def get_boavizta_supported_instances():
     headers = CaseInsensitiveDict()
     headers["accept"] = "application/json"
     
-    x = requests.get('http://hackaton.boavizta.org:5000/v1/cloud/aws/all_instances', headers=headers, json={} )
+    x = requests.get('https://api.boavizta.org/v1/cloud/aws/all_instances', headers=headers, json={} )
     # print(x.text) 
     return x.text
 
@@ -63,7 +63,7 @@ def get_boavizta_default_data(instance_type):
     headers["Content-Type"] = "application/json"
     headers["accept"] = "application/json"
 
-    x = requests.post(f'http://hackaton.boavizta.org:5000/v1/cloud/aws?instance_type={instance_type}&verbose=false', headers=headers, json={} )
+    x = requests.post(f'https://api.boavizta.org/v1/cloud/aws?instance_type={instance_type}&verbose=false', headers=headers, json={} )
     return x.text
 
 def get_boavizta_data(instance_type, hours_use_time, usage_location):
@@ -71,7 +71,7 @@ def get_boavizta_data(instance_type, hours_use_time, usage_location):
     headers["Content-Type"] = "application/json"
     headers["accept"] = "application/json"
 
-    x = requests.post(f'http://api.boavizta.org:5000/v1/cloud/aws?instance_type={instance_type}&verbose=false', headers=headers, json={"hours_use_time": hours_use_time, "usage_location": usage_location} )
+    x = requests.post(f'https://api.boavizta.org/v1/cloud/aws?instance_type={instance_type}&verbose=false', headers=headers, json={"hours_use_time": hours_use_time, "usage_location": usage_location} )
     return x.text
 
 

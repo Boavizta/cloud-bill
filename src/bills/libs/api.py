@@ -11,7 +11,7 @@ def get_aws_instance_gwp(instance_type, hours_use_time, usage_location):
     headers["accept"] = "application/json"
 
     x = requests.post(
-        f"http://api.boavizta.org:5000/v1/cloud/aws?instance_type={instance_type}&verbose=false",
+        f"https://api.boavizta.org/v1/cloud/aws?instance_type={instance_type}&verbose=false",
         headers=headers,
         json={"hours_use_time": hours_use_time, "usage_location": usage_location},
     )
