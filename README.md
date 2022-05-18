@@ -1,27 +1,46 @@
-# 👩🏻‍💻 Hackaton 4 - Proof of concept using BOAVIZTAPI
+# Cloud-bill
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Estimate environmental impact of your AWS resources by combining an AWS cloud usage report with data from Boavizta API.
 
----
+⚠ Warning: _Work In Progress_ code produced during Boavizta Hackaton #4 (https://boavizta.org/en).
 
-## :dart: Objective
+## Usage
 
-As part of Boavizta's desire to improve the quality of the measurement of the environmental impacts of ICTs in organizations, boaviztapi project aims at giving access to the group's work to as many people as possible in an automated and industrialized way.  
+```sh
+# Set you aws profile (you may need aws cli install first)
+export AWS_PROFILE=my-custom-profile-name
+cd src/bills
+# Run the analysis on the provide sample.csv file
+python main.py -i sample.csv
+```
 
-The various data and methodologies integrated by Boavizta are aggregated and made available via an API.
+## Other sample code
 
-The objectif of the hackaton is to implement proof of concept of [use cases](https://github.com/Boavizta/Hackaton_4/issues) calling the boaviztapi.
+These samples were produced during Boavizta Hackaton #4 (https://boavizta.org/en) and mainly left unmaintained.
 
+We keep them because they may provide example about how we can query Cloudwath and Boavizta API.
 
-## :fast_forward: Request BOAVIZTAPI
+### Query AWS account
 
-* See the OpenAPI specification: <http://hackaton.boavizta.org:5000/docs>
+See some examples of querying aws api in `src/sample_code/instance-usage/python print-instance-usage.py`.
 
-* [Documentation](http://hackaton.boavizta.org/)
+## Query account to combine usage with impacts
 
-* Access the demo API: <http://hackaton.boavizta.org:5000>
+### Principle
 
+1. Query AWS apis to list all instances of the account and retrieve average CPU utilization
+2. Use theses results to query Boavizta API to get impacts
 
-## :scroll: License
+### Usage
 
-MIT
+Authenticate against aws using a specific profile with `export AWS_PROFILE=my-custom-profile-name`.
+
+```bash
+cd src/sample_code/instances-impacts-from-cloudwatch
+python main.py
+```
+
+```bash
+cd src/sample_code/instances-impacts-from-cloudwatch
+python test_main.py
+```
