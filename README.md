@@ -2,6 +2,9 @@
 
 Estimate environmental impact of your AWS resources by combining an AWS cloud usage report with data from Boavizta API.
 
+General idea is to use _cold_ data (csv file) retrieved manually from AWS cold explorer (see https://docs.aws.amazon.com/cost-management/latest/userguide/ce-saving.html).
+It provides hours of usage for different instances types, and we can use it to query Boa API.
+
 ⚠ Warning: _Work In Progress_ code produced during Boavizta Hackaton #4 (https://boavizta.org/en).
 
 ## Usage
@@ -13,6 +16,10 @@ cd src/bills
 # Run the analysis on the provide sample.csv file
 python main.py -i sample.csv
 ```
+
+## Source
+
+Relevant source is in `/src/bill` 
 
 ## Other sample code
 
