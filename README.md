@@ -7,6 +7,8 @@ It provides hours of usage for different instances types, and we can use it to q
 
 ⚠ Warning: _Work In Progress_ code produced during Boavizta Hackaton #4 (https://boavizta.org/en).
 
+![cloud bill in context](docs/cloud-bill-system-in-context.png)
+
 ## Usage
 
 ```sh
